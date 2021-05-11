@@ -1,5 +1,7 @@
 # simple-async-demo
 
+[![CI/CD](https://github.com/dodalovic/simple-async-demo/actions/workflows/workflow.yml/badge.svg)](https://github.com/dodalovic/simple-async-demo/actions/workflows/workflow.yml)
+
 Demonstrates asynchronous communication between two headless services:
 
 * `order-generator`
