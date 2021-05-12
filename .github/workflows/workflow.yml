@@ -45,12 +45,12 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-order-generator
-          path: build/libs
+          path: order-generator/build/libs
       - name: Download order-validator build artifact
         uses: actions/download-artifact@v2
         with:
           name: build-order-validator
-          path: build/libs
+          path: order-validator/build/libs
       - name: Push order-generator to Docker Hub
         uses: docker/build-push-action@v1
         with:
