@@ -44,7 +44,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          path: ./order-generator
+          path: order-generator
           repository: dodalovic/order-generator
           tag_with_ref: true
       - name: Push order-validator to Docker Hub
@@ -52,6 +52,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          path: ./order-validator
+          path: order-validator
           repository: dodalovic/order-validator
           tag_with_ref: true
