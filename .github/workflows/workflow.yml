@@ -40,6 +40,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Download order-generator build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-order-generator
+          path: build/libs
+      - name: Download order-validator build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-order-validator
+          path: build/libs
       - name: Push order-generator to Docker Hub
         uses: docker/build-push-action@v1
         with:
