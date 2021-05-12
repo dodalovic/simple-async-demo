@@ -35,3 +35,21 @@ jobs:
         with:
           name: build-order-validator
           path: build/libs/order-validator-0.0.1-SNAPSHOT.jar
+  push_to_registry:
+    name: Push Docker images to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push order-generator to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: dodalovic/order-generator
+          tag_with_ref: true
+      - name: Push order-validator to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: dodalovic/order-validator
+          tag_with_ref: true
