@@ -39,6 +39,7 @@ jobs:
     name: Push Docker images to Docker Hub
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Push order-generator to Docker Hub
         uses: docker/build-push-action@v1
         with:
