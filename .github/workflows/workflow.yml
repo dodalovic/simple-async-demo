@@ -27,14 +27,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-order-generator
-          path: build/libs/order-generator-0.0.1-SNAPSHOT.jar
+          path: order-generator/build/libs/order-generator-0.0.1-SNAPSHOT.jar
       - name: Build order validator
         run: ./gradlew -p order-validator clean build
       - name: Upload order validator artifact
         uses: actions/upload-artifact@v2
         with:
           name: build-order-validator
-          path: build/libs/order-validator-0.0.1-SNAPSHOT.jar
+          path: order-validator/build/libs/order-validator-0.0.1-SNAPSHOT.jar
   push_to_registry:
     name: Push Docker images to Docker Hub
     runs-on: ubuntu-latest
