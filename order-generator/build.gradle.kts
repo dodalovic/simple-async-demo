@@ -30,6 +30,7 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:1.12.5")
     testImplementation("io.kotest:kotest-runner-junit5:4.5.0")
     testImplementation("io.kotest:kotest-assertions-core:4.5.0")
+    testImplementation("org.testcontainers:junit-jupiter:1.15.3")
 }
 
 tasks.withType<KotlinCompile> {
