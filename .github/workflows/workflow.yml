@@ -21,15 +21,19 @@ jobs:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
+      - name: Test order generator
+        run: ./gradlew -p order-generator clean test
       - name: Build order generator
-        run: ./gradlew -p order-generator clean build
+        run: ./gradlew -p order-generator clean build -x test
       - name: Upload order generator artifact
         uses: actions/upload-artifact@v2
         with:
           name: build-order-generator
           path: order-generator/build/libs/order-generator-0.0.1-SNAPSHOT.jar
+      - name: Test order validator
+        run: ./gradlew -p order-validator clean test
       - name: Build order validator
-        run: ./gradlew -p order-validator clean build
+        run: ./gradlew -p order-validator clean build -x test
       - name: Upload order validator artifact
         uses: actions/upload-artifact@v2
         with:
